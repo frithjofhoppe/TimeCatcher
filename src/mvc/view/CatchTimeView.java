@@ -1,14 +1,6 @@
 package mvc.view;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-import java.util.TreeMap;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -19,14 +11,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import mvc.interfaces.MVCView;
 
-public class LoginView implements MVCView
+public class CatchTimeView implements MVCView
 {
 	Scene appScene;
 	Parent root;
 	Button btnLogin;
-	
 
-	public LoginView()
+	public CatchTimeView()
 	{
 		init();
 		bindContent();
@@ -41,8 +32,8 @@ public class LoginView implements MVCView
 	{
 		 try
 		{
-			root = FXMLLoader.load(getClass().getResource("LoginViewFXML.fxml"));
-			btnLogin = (Button) root.lookup("#btnLogin");
+			root = FXMLLoader.load(getClass().getResource("CatchTimeViewFXML.fxml"));
+			
 			
 		} catch (IOException e)
 		{
@@ -50,7 +41,6 @@ public class LoginView implements MVCView
 			e.printStackTrace();
 		}
 	}
-
 
 	@Override
 	public void setListener(EventHandler<ActionEvent> listener)

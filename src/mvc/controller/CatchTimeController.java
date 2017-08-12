@@ -1,24 +1,22 @@
 package mvc.controller;
 
-import application.MainController;
-import exception.SceneException;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import mvc.interfaces.MVCController;
 import mvc.interfaces.MVCModel;
 import mvc.interfaces.MVCView;
+import mvc.model.CatchTimeModel;
 import mvc.model.LoginModel;
+import mvc.view.CatchTimeView;
 import mvc.view.LoginView;
 
-public class LoginController implements MVCController
+public class CatchTimeController implements MVCController
 {
 
-	LoginView view;
-	LoginModel model;
+	CatchTimeView view;
+	CatchTimeModel model;
 	Scene loginScene;
 	
 	public Scene getScene()
@@ -26,29 +24,26 @@ public class LoginController implements MVCController
 		return loginScene;
 	}
 
-	public LoginController()
+	public CatchTimeController()
 	{
-		this.model = new LoginModel();
-		this.view = new LoginView();
-		addListener();
-		loginScene = this.view.getAppScene();
+//		this.model = new CatchTimeModel();
+//		this.view = new CatchTimeView();
+//		addListener();
+//		loginScene = this.view.getAppScene();
 	}
 	
-	class LoginListener implements EventHandler<ActionEvent>
+	class CatchTimeListener implements EventHandler<ActionEvent>
 	{
 		@Override
 		public void handle(ActionEvent arg0)
 		{
-			if(((Node)arg0.getSource()).getId().equals("btnlogin"))
-			{
-				System.out.println("OUT:btnLogin");
-			}
+			
 		}
 	}
 	
 	private void addListener()
 	{
-		view.setListener(new LoginListener());
+		view.setListener(new CatchTimeListener());
 	}
 
 	@Override
