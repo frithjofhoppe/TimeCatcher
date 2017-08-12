@@ -21,6 +21,7 @@
             <Button fx:id="btnLogin" layoutX="33.0" layoutY="272.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="186.0" text="Login" />
             <TextField layoutX="33.0" layoutY="171.0" promptText="Username" />
             <TextField layoutX="33.0" layoutY="227.0" promptText="Password" />
+            <Pane fx:id="paneAccount" layoutX="57.0" layoutY="22.0" prefHeight="138.0" prefWidth="138.0" />
          </children>
       </Pane>
       <Pane fx:id="paneLeft" prefHeight="400.0" prefWidth="371.0" />

@@ -11,5 +11,10 @@
 
 #paneLeft
 {
-	-fx-background-image:url("../../pictures/office-820390_1920.jpg");
+	-fx-background-image:url("../../../src/mvc/images/office-820390_1920.jpg");
+}
+
+#paneAccount
+{
+	-fx-background-image:url("../../../src/mvc/images/acount.png");
 }
