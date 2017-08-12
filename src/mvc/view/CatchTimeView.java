@@ -45,7 +45,7 @@ public class CatchTimeView implements MVCView
 	@Override
 	public void setListener(EventHandler<ActionEvent> listener)
 	{
-		btnLogin.setOnAction(listener);
+		
 	}
 
 	public Scene getAppScene()

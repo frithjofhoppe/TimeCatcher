@@ -26,10 +26,10 @@ public class CatchTimeController implements MVCController
 
 	public CatchTimeController()
 	{
-//		this.model = new CatchTimeModel();
-//		this.view = new CatchTimeView();
-//		addListener();
-//		loginScene = this.view.getAppScene();
+		this.model = new CatchTimeModel();
+		this.view = new CatchTimeView();
+		addListener();
+		loginScene = this.view.getAppScene();
 	}
 	
 	class CatchTimeListener implements EventHandler<ActionEvent>

@@ -39,9 +39,12 @@ public class LoginController implements MVCController
 		@Override
 		public void handle(ActionEvent arg0)
 		{
-			if(((Node)arg0.getSource()).getId().equals("btnlogin"))
+			if(((Node)arg0.getSource()).getId().equals("btnLogin"))
 			{
-				System.out.println("OUT:btnLogin");
+				if(!MainController.setScene("catchtimecontroller"))
+				{
+					System.out.println("Fehler");
+				}
 			}
 		}
 	}
