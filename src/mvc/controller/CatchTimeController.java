@@ -3,6 +3,7 @@ package mvc.controller;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import mvc.interfaces.MVCController;
 import mvc.interfaces.MVCModel;
@@ -37,7 +38,10 @@ public class CatchTimeController implements MVCController
 		@Override
 		public void handle(ActionEvent arg0)
 		{
-			
+//			if(((MenuItem)arg0.getSource()).getId().equals("mainMenuOptExit"))
+//			{
+//				System.exit(0);
+//			}
 		}
 	}
 	
