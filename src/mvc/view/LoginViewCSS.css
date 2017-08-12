@@ -6,10 +6,10 @@
 
 #paneRight
 {
-	-fx-background-color:rgb(255,255,225);
+	-fx-background-color:white;
 }
 
 #paneLeft
 {
-	-fx-background-image:url("pictures/LoginViewPic1.jpg");
+	-fx-background-image:url("src/pictures/office-820390_1920.jpg");
 }
