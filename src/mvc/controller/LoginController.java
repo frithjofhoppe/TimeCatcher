@@ -1,5 +1,9 @@
 package mvc.controller;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import application.MainController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -19,6 +23,7 @@ public class LoginController implements MVCController
 	{
 		this.view = new LoginView();
 		view.setListener(loginAction());
+		view.setLinkListener(hyperlink());
 		this.model = new LoginModel();
 	}
 	
@@ -36,6 +41,30 @@ public class LoginController implements MVCController
 		};
 	}
 
+	private EventHandler<ActionEvent> hyperlink()
+	{
+		return new EventHandler<ActionEvent>(){
+
+			@Override
+			public void handle(ActionEvent arg0)
+			{
+				try
+				{
+					java.awt.Desktop.getDesktop().browse(new URI("https://www.google.ch"));
+				} catch (IOException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (URISyntaxException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+		};
+	}
+	
 	@Override
 	public MVCModel getModel()
 	{

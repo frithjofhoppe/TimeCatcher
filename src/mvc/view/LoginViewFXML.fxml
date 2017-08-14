@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@LoginViewCSS.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="385.0" prefWidth="600.0" stylesheets="@LoginViewCSS.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="403.0" minWidth="10.0" prefWidth="348.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="10.0" prefWidth="252.0" />
@@ -18,17 +20,30 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Pane fx:id="paneRight" prefHeight="400.0" prefWidth="285.0" GridPane.columnIndex="1">
+      <Pane fx:id="paneRight" prefHeight="366.0" prefWidth="252.0" GridPane.columnIndex="1">
          <children>
             <Button fx:id="btnLogin" layoutX="33.0" layoutY="272.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="186.0" text="Login" />
             <TextField fx:id="lblUsername" layoutX="33.0" layoutY="171.0" promptText="Username" />
             <Pane fx:id="paneAccount" layoutX="57.0" layoutY="22.0" prefHeight="138.0" prefWidth="138.0">
                <children>
                   <ImageView fx:id="imgLogin" fitHeight="138.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgViewLogin" fitHeight="138.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/account.png" />
+                     </image>
+                  </ImageView>
                </children></Pane>
             <PasswordField fx:id="lblPassword" layoutX="33.0" layoutY="220.0" promptText="Password" />
+            <Hyperlink fx:id="linkHelp" layoutX="33.0" layoutY="320.0" prefHeight="31.0" prefWidth="186.0" text="You nee help?" />
          </children>
       </Pane>
-      <Pane fx:id="paneLeft" prefHeight="400.0" prefWidth="371.0" />
+      <Pane fx:id="paneLeft" prefHeight="400.0" prefWidth="371.0">
+         <children>
+            <ImageView fitHeight="385.0" fitWidth="356.0" layoutX="-8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/clock2.jpg" />
+               </image>
+            </ImageView>
+         </children></Pane>
    </children>
 </GridPane>

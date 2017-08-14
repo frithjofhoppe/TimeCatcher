@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 import mvc.interfaces.MVCView;
 
@@ -20,6 +21,7 @@ public class LoginView implements MVCView
 	Button btnLogin;
 	TextField txtUsername;
 	TextField txtPassword;
+	Hyperlink linkHelp;
 	
 	public LoginView()
 	{
@@ -40,6 +42,8 @@ public class LoginView implements MVCView
 				btnLogin = (Button) root.lookup("#btnLogin");
 				txtPassword = (TextField) root.lookup("#lblPassword");
 				txtUsername = (TextField) root.lookup("#lblUsername");
+				linkHelp = (Hyperlink)root.lookup("#linkHelp");
+				
 				
 			} catch (IOException e)
 			{
@@ -68,6 +72,11 @@ public class LoginView implements MVCView
 	public void setListener(EventHandler<ActionEvent> listener)
 	{
 		btnLogin.setOnAction(listener);
+	}
+
+	public void setLinkListener(EventHandler<ActionEvent> hyperlink)
+	{
+		linkHelp.setOnAction(hyperlink);
 	}
 
 }
