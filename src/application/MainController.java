@@ -80,6 +80,8 @@ public class MainController
 		stage.setScene(newScene);
 		stage.show();
 
+		System.out.println("LOGGER: Set new Scene => "+newScene.toString());
+		
 		if (stage.getScene().equals(newScene))
 		{
 			return true;

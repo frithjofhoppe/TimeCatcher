@@ -41,7 +41,6 @@ public class CatchTimeView implements MVCView
 	{
 		 try
 			{
-			 	
 				root = FXMLLoader.load(getClass().getResource("CatchTimeViewFXMl.fxml"));
 				
 				mainMenuBar = (MenuBar)root.lookup("#mainMenuBar");
