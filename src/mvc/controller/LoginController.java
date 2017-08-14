@@ -1,13 +1,9 @@
 package mvc.controller;
 
 import application.MainController;
-import exception.SceneException;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import mvc.interfaces.MVCController;
 import mvc.interfaces.MVCModel;
 import mvc.interfaces.MVCView;
@@ -16,42 +12,28 @@ import mvc.view.LoginView;
 
 public class LoginController implements MVCController
 {
-
 	LoginView view;
 	LoginModel model;
-	Scene loginScene;
 	
-	public Scene getScene()
-	{
-		return loginScene;
-	}
-
 	public LoginController()
 	{
-		this.model = new LoginModel();
 		this.view = new LoginView();
-		addListener();
-		loginScene = this.view.getAppScene();
+		view.setListener(loginAction());
+		this.model = new LoginModel();
 	}
 	
-	class LoginListener implements EventHandler<ActionEvent>
+	private EventHandler<ActionEvent> loginAction()
 	{
-		@Override
-		public void handle(ActionEvent arg0)
-		{
-			if(((Node)arg0.getSource()).getId().equals("btnLogin"))
+		return new EventHandler<ActionEvent>(){
+
+			@Override
+			public void handle(ActionEvent arg0)
 			{
-				if(!MainController.setScene("catchtimecontroller"))
-				{
-					System.out.println("Fehler");
-				}
+				System.out.println(view.getPassword() + " " +view.getUsername());
+				MainController.setScene("catchtimecontroller");
 			}
-		}
-	}
-	
-	private void addListener()
-	{
-		view.setListener(new LoginListener());
+			
+		};
 	}
 
 	@Override
@@ -66,6 +48,12 @@ public class LoginController implements MVCController
 	{
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public Scene getScene()
+	{
+		return view.getAppScene();
 	}
 
 }

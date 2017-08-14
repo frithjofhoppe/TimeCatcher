@@ -1,0 +1,16 @@
+#firstPane
+{
+	-fx-background-color:lightgray ;
+}
+
+#personalInfos
+{
+	-fx-border-color:lightgray;
+	-fx-border-width:0 0 0 5;
+}
+
+#personalData
+{
+	-fx-border-color:lightgray;
+	-fx-border-width:0 0 0 5;
+}

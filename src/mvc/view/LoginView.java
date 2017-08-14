@@ -1,38 +1,33 @@
 package mvc.view;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-import java.util.TreeMap;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import mvc.interfaces.MVCView;
 
 public class LoginView implements MVCView
 {
+
 	Scene appScene;
 	Parent root;
 	Button btnLogin;
+	TextField txtUsername;
+	TextField txtPassword;
 	
-
 	public LoginView()
 	{
 		init();
-		bindContent();
+		binContent();
 	}
 	
-	private void bindContent()
+	private void binContent()
 	{
 		appScene = new Scene(root);
 	}
@@ -40,17 +35,34 @@ public class LoginView implements MVCView
 	private void init()
 	{
 		 try
-		{
-			root = FXMLLoader.load(getClass().getResource("LoginViewFXML.fxml"));
-			btnLogin = (Button) root.lookup("#btnLogin");
-			
-		} catch (IOException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			{
+				root = FXMLLoader.load(getClass().getResource("LoginViewFXML.fxml"));
+				btnLogin = (Button) root.lookup("#btnLogin");
+				txtPassword = (TextField) root.lookup("#lblPassword");
+				txtUsername = (TextField) root.lookup("#lblUsername");
+				
+			} catch (IOException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
 	}
 
+	public String getPassword()
+	{
+		return txtPassword.getText();
+	}
+	
+	public String getUsername()
+	{
+		return txtUsername.getText();
+	}
+	
+	public Scene getAppScene()
+	{
+		return appScene;
+	}
 
 	@Override
 	public void setListener(EventHandler<ActionEvent> listener)
@@ -58,8 +70,4 @@ public class LoginView implements MVCView
 		btnLogin.setOnAction(listener);
 	}
 
-	public Scene getAppScene()
-	{
-		return appScene;
-	}
 }

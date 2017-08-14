@@ -1,9 +1,7 @@
 package mvc.controller;
 
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import mvc.interfaces.MVCController;
 import mvc.interfaces.MVCModel;
@@ -15,39 +13,27 @@ import mvc.view.LoginView;
 
 public class CatchTimeController implements MVCController
 {
-
 	CatchTimeView view;
 	CatchTimeModel model;
-	Scene loginScene;
 	
-	public Scene getScene()
-	{
-		return loginScene;
-	}
-
 	public CatchTimeController()
 	{
-		this.model = new CatchTimeModel();
 		this.view = new CatchTimeView();
-		addListener();
-		loginScene = this.view.getAppScene();
+		view.setListener(closeAction());
+		this.model = new CatchTimeModel();
 	}
 	
-	class CatchTimeListener implements EventHandler<ActionEvent>
+	private EventHandler<ActionEvent> closeAction()
 	{
-		@Override
-		public void handle(ActionEvent arg0)
-		{
-//			if(((MenuItem)arg0.getSource()).getId().equals("mainMenuOptExit"))
-//			{
-//				System.exit(0);
-//			}
-		}
-	}
-	
-	private void addListener()
-	{
-		view.setListener(new CatchTimeListener());
+		return new EventHandler<ActionEvent>(){
+
+			@Override
+			public void handle(ActionEvent arg0)
+			{
+				System.exit(0);
+			}
+			
+		};
 	}
 
 	@Override
@@ -62,6 +48,12 @@ public class CatchTimeController implements MVCController
 	{
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public Scene getScene()
+	{
+		return view.getAppScene();
 	}
 
 }
