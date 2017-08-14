@@ -74,7 +74,7 @@
                <children>
                   <Pane prefHeight="601.0" prefWidth="376.0">
                      <children>
-                        <Pane fx:id="personalInfos" layoutX="14.0" layoutY="221.0" prefHeight="362.0" prefWidth="219.0">
+                        <Pane fx:id="personalInfos" layoutX="14.0" layoutY="260.0" prefHeight="323.0" prefWidth="262.0">
                            <children>
                               <Label layoutX="23.0" layoutY="22.0" text="First name" />
                               <Label layoutX="135.0" layoutY="21.0" text="Label" />
@@ -90,8 +90,10 @@
                      <children>
                         <TreeTableView layoutX="42.0" layoutY="262.0" prefHeight="321.0" prefWidth="718.0">
                           <columns>
-                            <TreeTableColumn prefWidth="75.0" text="C1" />
-                            <TreeTableColumn prefWidth="75.0" text="C2" />
+                            <TreeTableColumn prefWidth="110.0" text="Beginning" />
+                            <TreeTableColumn prefWidth="110.0" text="End" />
+                              <TreeTableColumn prefWidth="110.0" text="Interval" />
+                              <TreeTableColumn prefWidth="388.0" text="Description" />
                           </columns>
                         </TreeTableView>
                         <Label fx:id="personalDatalblEntries" layoutX="41.0" layoutY="223.0" prefHeight="26.0" prefWidth="719.0" text="Last Entries" />
